@@ -1,1 +1,2 @@
-# rails_prj
+# rails_prj 
+this is rails 101 project
