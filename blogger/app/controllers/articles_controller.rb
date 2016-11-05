@@ -2,7 +2,6 @@ class ArticlesController < ApplicationController
  include ArticlesHelper
   def index
     @articles = Article.all
-    flash.notice="list of all articles"
   end
   def show 
     @article = Article.find(params[:id])
@@ -10,6 +9,7 @@ class ArticlesController < ApplicationController
     @comment = Comment.new
     @comment.article_id = @article.id
   end
+    before_filter :require_login, except: [:index, :show]
   def new
     @article= Article.new
   end
